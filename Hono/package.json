@@ -1,0 +1,25 @@
+{
+  "name": "hono",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "dev2" : "tsx watch src/API_test.ts",
+    "dev3" : "tsx watch src/consept.ts"
+
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.11.4",
+    "hono": "^4.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.5.3"
+  },
+  "description": "``` npm install npm run dev ```",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
