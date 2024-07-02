@@ -77,9 +77,46 @@ app.get('/home', (c) => {
 
 //Route
 const app1 = new Hono();
-app1.get('/user/:name?', (c) => c.text('Rifky!'))
+// app1.get('/user/:name?', (c) => c.text('Rifky!'))
 
-serve(app1)
+// serve(app1)
+
+//Chained Route
+// app1
+//   .get('/endpoint', (c) => {
+//     return c.text('GET /endpoint')
+//   })
+//   .post((c) => {
+//     return c.text('POST /endpoint')
+//   })
+//   .delete((c) => {
+//     return c.text('DELETE /endpoint')
+//   })
+
+//   serve(app1)
+
+//Group Route
+// const buku = new Hono()
+
+// buku.get('/', (c) => c.text('List Books'))
+// buku.get('/:id', (c) => {
+//   const id = c.req.param('id')
+//   return c.text(" Dapatakan Buku : " + id)
+// })
+// buku.post('/', (c) => c.text('Buat Buku'))
+
+// app1.route('/buku', buku)
+// serve(app1)
+
+//Routing with Hostname
+const web = new Hono({
+  getPath: (req) => req.url.replace(/^https?:\/([^?]+).*$/, '$1'),
+});
+
+web.get('/www.rifky.com/home', (c) => c.text('Hallo Dunia'))
+web.get('www.rifky2.com/home', (c) => c.text('Shuttt, Ini Web Rahasia'))
+
+serve(web)
 
 
 
