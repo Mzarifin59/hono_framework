@@ -109,14 +109,14 @@ const app1 = new Hono();
 // serve(app1)
 
 //Routing with Hostname
-const web = new Hono({
-  getPath: (req) => req.url.replace(/^https?:\/([^?]+).*$/, '$1'),
-});
+// const web = new Hono({
+//   getPath: (req) => req.url.replace(/^https?:\/([^?]+).*$/, '$1'),
+// });
 
-web.get('/www.rifky.com/home', (c) => c.text('Hallo Dunia'))
-web.get('www.rifky2.com/home', (c) => c.text('Shuttt, Ini Web Rahasia'))
+// web.get('/www.rifky.com/home', (c) => c.text('Hallo Dunia'))
+// web.get('www.rifky2.com/home', (c) => c.text('Shuttt, Ini Web Rahasia'))
 
-serve(web)
+// serve(web)
 
 
 
