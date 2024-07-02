@@ -75,6 +75,12 @@ app.get('/home', (c) => {
 // // Start the server on port 3000
 // server.listen(3000);
 
+//Route
+const app1 = new Hono();
+app1.get('/user/:name?', (c) => c.text('Rifky!'))
+
+serve(app1)
+
 
 
 
